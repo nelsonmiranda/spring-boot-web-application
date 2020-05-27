@@ -1,4 +1,4 @@
-package com.in28minutes.springboot.web.springbootwebapplication;
+package com.in28minutes.springboot.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
