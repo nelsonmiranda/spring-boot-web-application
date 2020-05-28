@@ -7,9 +7,10 @@
 <title>Login</title>
 </head>
 <body>
-	<p>Usuario: <span>${name}</span> </p><br/>
-	List Todos: ${todos}
-	<br />
-	<a href="/add-todo">Add Todo</a>
+	Add Todo Page For ${name}
+	<form action="/add-todo" method="POST">
+	Descripci&oacute;n: <input type="text" name="description" >
+	<input type="submit" value="Save" >
+	</form>
 </body>
 </html>

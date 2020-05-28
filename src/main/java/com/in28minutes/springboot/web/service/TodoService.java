@@ -35,6 +35,7 @@ public class TodoService {
     public void addTodo(String name, String desc, Date targetDate,
             boolean isDone) {
         todos.add(new Todo(++todoCount, name, desc, targetDate, isDone));
+        System.out.println("List updated with the new todo: " + todos);
     }
 
     public void deleteTodo(int id) {
