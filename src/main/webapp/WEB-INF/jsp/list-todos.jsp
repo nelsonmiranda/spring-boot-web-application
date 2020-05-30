@@ -6,28 +6,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Todo List</title>
+
+	<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<h1>List of ${name}'s todos:</h1>
-	<table>
-		<thead>
-			<tr>
-				<th>Description</th>
-				<th>Target date</th>
-				<th>Is done</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${todos}" var="todo">
+	<div class="container">
+		<table class="table table-striped">
+			<caption>Your todos are</caption>
+			<thead>
 				<tr>
-					<td>${todo.desc}</td>
-					<td>${todo.targetDate}</td>
-					<td>${todo.done}</td>
+					<th>Description</th>
+					<th>Target date</th>
+					<th>Is done</th>
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<c:forEach items="${todos}" var="todo">
+					<tr>
+						<td>${todo.desc}</td>
+						<td>${todo.targetDate}</td>
+						<td>${todo.done}</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+		
+		<div>
+			<a class="button" href="/add-todo">Add Todo</a>
+		</div>
+	</div>
 	
-	<a href="/add-todo">Add Todo</a>
+	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
 </html>
