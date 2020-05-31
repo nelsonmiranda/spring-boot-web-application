@@ -1,3 +1,4 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,14 +12,14 @@
 
 <div class="container">
 	
-	<form action="/add-todo" method="POST">
+	<form:form action="/add-todo" method="POST" modelAttribute="todo">
 		<fieldset>
-			<label>Descripci&oacute;n</label>
-			<input type="text" name="description" class="form-control" required="required" placeholder="Type the description">
+			<form:label path="desc" >Descripci&oacute;n</form:label>
+			<form:input path="desc" type="text"  class="form-control" required="required" placeholder="Type the description" />
 		</fieldset>
 		
 		<input type="submit" value="Save" class="btn btn-success" >
-	</form>
+	</form:form>
 
 </div>
 	
