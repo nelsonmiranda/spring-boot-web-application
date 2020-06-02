@@ -16,6 +16,7 @@
 		<fieldset>
 			<form:label path="desc" >Descripci&oacute;n</form:label>
 			<form:input path="desc" type="text"  class="form-control" required="required" placeholder="Type the description" />
+			<form:errors path="desc" cssClass="text-warning" />
 		</fieldset>
 		
 		<input type="submit" value="Save" class="btn btn-success" >
