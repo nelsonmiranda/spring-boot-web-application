@@ -36,14 +36,20 @@ public class TodoController {
 	
 	@RequestMapping(value = "/list-todos", method = RequestMethod.GET)
 	public String showTodos(ModelMap model) {
-		model.put("todos", todoService.retrieveTodos("in28Minutes"));
+		String name = getLoggedInUserName(model);
+		model.put("todos", todoService.retrieveTodos(name));
 		return "list-todos";
 		
+	}
+
+	private String getLoggedInUserName(ModelMap model) {
+		return (String) model.get("name");
 	}
 	
 	@RequestMapping(value = "/add-todo", method = RequestMethod.GET)
 	public String addTodoPage(ModelMap model) {
-		model.put("todo", new Todo());
+		model.put("todo", new Todo(0, getLoggedInUserName(model),
+				"Default Desc", new Date(), false));	
 		return "todo";	
 	}
 	
@@ -54,7 +60,7 @@ public class TodoController {
 			return "todo";
 		}
 		
-		todoService.addTodo("in28Minutes", todo.getDesc(), todo.getTargetDate(), false);		
+		todoService.addTodo(getLoggedInUserName(model), todo.getDesc(), todo.getTargetDate(), false);		
 		return "redirect:/list-todos";	
 	}	
 	
@@ -72,7 +78,7 @@ public class TodoController {
 			return "todo";
 		}
 		
-		todo.setUser("in28Minutes");
+		todo.setUser(getLoggedInUserName(model));
 		todoService.updateTodo(todo);
 		return "redirect:/list-todos";	
 	}	
