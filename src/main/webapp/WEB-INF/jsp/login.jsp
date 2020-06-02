@@ -1,12 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Login</title>
-</head>
-<body>
+<%@ include file="common/header.jsp" %>
+<%@ include file="common/navigation.jsp" %>
+
+<div class="container">
 
 	<h1>Welcome to Login !!!</h1>
 	<br />
@@ -16,6 +11,7 @@
 		Password: <input type="password" name="password">
 		<input type="submit" value="Submit" >
 	</form>
+	
+</div>
 
-</body>
-</html>
+<%@ include file="common/footer.jsp" %>
