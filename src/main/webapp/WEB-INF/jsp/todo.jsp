@@ -12,7 +12,8 @@
 
 <div class="container">
 	
-	<form:form action="/add-todo" method="POST" modelAttribute="todo">
+	<form:form method="POST" modelAttribute="todo">
+		<form:hidden path="id"/>
 		<fieldset>
 			<form:label path="desc" >Descripci&oacute;n</form:label>
 			<form:input path="desc" type="text"  class="form-control" required="required" placeholder="Type the description" />
